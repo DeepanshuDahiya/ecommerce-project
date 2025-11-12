@@ -43,12 +43,12 @@ export default function ProductDetail({ setCartItems }) {
   ) : (
     <>
       <div className="min-h-screen p-8 flex flex-col items-center">
-        <div className="max-w-5xl w-full border border-gray-300 flex flex-row gap-10 bg-white rounded-2xl shadow-lg p-8">
-          <div className="flex-1 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden">
+        <div className="max-w-5xl w-full border border-gray-300 flex flex-wrap gap-10 bg-white rounded-2xl shadow-lg p-8 max-[680px]:flex-col">
+          <div className="flex-1 flex items-center justify-center bg-gray-100 rounded-xl overflow-hidden ">
             <img
               src={product.image || product.thumbnail}
               alt={product.title}
-              className="w-full max-h-[400px] object-cover"
+              className="w-full max-h-[300px] object-contain"
             />
           </div>
 
@@ -97,12 +97,12 @@ export default function ProductDetail({ setCartItems }) {
               </p>
             </div>
             <div className="mt-6 flex items-center justify-between">
-              <p className="text-2xl font-bold text-emerald-600">
+              <p className="text-2xl font-bold text-emerald-600 max-[400px]:text:sm">
                 ${product.price}
               </p>
               {product.stock ? (
                 <button
-                  className="px-5 py-2 text-sm bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 cursor-pointer"
+                  className="px-5 py-2 text-sm bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 cursor-pointer max-[400px]:text-xs"
                   onClick={(e) => handleSetCart(product)}
                 >
                   Add to Cart

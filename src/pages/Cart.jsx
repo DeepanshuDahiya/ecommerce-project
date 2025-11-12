@@ -25,7 +25,7 @@ export default function Cart({
             </h2>
           </div>
           <div className="p-6">
-            <div className="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-md p-6 border border-gray-400">
+            <div className="max-w-3xl mx-auto bg-gray-50 rounded-lg shadow-md p-6 border border-gray-400 max-[540px]:p-2">
               {cartItems.map((cartItem) => {
                 return (
                   <CartItem

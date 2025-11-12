@@ -98,7 +98,7 @@ export default function Navbar({
           <Link to="/cart" className="flex gap-2">
             <LuShoppingCart />
 
-            <span className="cart-count text-[13px] font-bold w-5 bg-blue-400 rounded-xl flex items-center justify-center max-[540px]:text-sm max-[540px]:w-3 max-[540px]:rounded-md">
+            <span className="cart-count text-[13px] font-bold w-5 bg-blue-400 rounded-xl flex items-center justify-center max-[540px]:text-xs max-[540px]:w-4 max-[540px]:rounded-xl">
               {cartItemCount}
             </span>
           </Link>

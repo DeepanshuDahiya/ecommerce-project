@@ -16,23 +16,23 @@ export default function Checkout({ cartItems, totalPrice }) {
 
   return (
     <>
-      <div className="mt-15 w-[65%] mx-auto p-2 flex flex-col gap-2 bg-gray-100 rounded-xl shadow-lg">
+      <div className="mt-15 w-[65%] mx-auto p-2 flex flex-col gap-2 bg-gray-100 rounded-xl shadow-lg max-[540px]:w-[85%]">
         <div className="flex justify-center text-2xl">Checkout</div>
         <div className="font-bold flex flex-col gap-4">
-          <div className="mt-5 flex flex-col flex-wrap">
-            <p className="flex justify-between">
-              Items: <span>{checkoutItemArr}</span>
+          <div className="mt-5 flex justify-between">
+            <p className="flex gap-5">
+              Items:<span>{checkoutItemArr}</span>
             </p>
           </div>
           <div>
-            <p className="flex justify-between">
+            <p className="flex gap-5">
               Total:{" "}
               <span className="flex flex-col flex-wrap">${totalPrice}</span>
             </p>
           </div>
         </div>
       </div>
-      <div className="bg-gray-100 shadow-lg mt-15 w-[65%] rounded-xl mx-auto flex flex-col justify-center">
+      <div className="bg-gray-100 shadow-lg mt-15 w-[65%] rounded-xl mx-auto flex flex-col justify-center max-[540px]:w-[85%]">
         <h3 className="mx-6 mt-6 font-bold text-lg my-4">Details</h3>
         <form className="flex flex-col flex-wrap gap-5 p-5">
           <CheckoutInput type={"text"} placeholder={"Full Name"} />
