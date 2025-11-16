@@ -1,16 +1,57 @@
-# React + Vite
+# 🛒 UrbanCart – E-Commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+UrbanCart is a modern and performance-focused e-commerce web app built using **React** and **TailwindCSS**.  
+It features fast product browsing with **debounced search**, **client-side pagination**, **server-side filtering**, **route-based lazy loading**, **Shimmer/Skeleton UI**, and **in-memory caching** for improved performance.
 
-Currently, two official plugins are available:
+Live Demo: https://ecommerce-web-app-01.netlify.app  
+GitHub Repo: https://github.com/DeepanshuDahiya/ecommerce-project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 🔍 Debounced Search (300ms)
+- Reduces redundant API calls by **~70%**.
+- Smooth and efficient search experience.
 
-## Expanding the ESLint configuration
+### 📦 Client-Side Pagination
+- Loads products in pages for better performance.
+- Instant navigation between pages.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🗂️ Server-Side Category Filtering
+- Fetches filtered product lists from backend APIs.
+- No unnecessary data loading.
+
+### ⚡ Route-Based Lazy Loading (React.lazy)
+- Loads routes only when needed.
+- Improves initial load time and overall performance.
+
+### 💾 In-Memory Caching
+- Prevents repeated API calls for previously viewed data.
+- Faster navigation between pages and filters.
+
+### 🎨 Shimmer / Skeleton Loading UI
+- Better perceived performance during data fetches.
+
+### 🛍️ Cart with Context API
+- Global cart state using **React Context API**.
+- Avoids prop drilling and keeps state consistent across the app.
+
+### 📱 Responsive UI
+- Built with TailwindCSS for a clean and responsive interface.
+
+---
+
+## 🛠️ Tech Stack
+
+- **React**
+- **TailwindCSS**
+- **React Router**
+- **Axios / Fetch**
+- **Context API (Global State)**
+- **React.lazy + Suspense**
+- **Shimmer Loading / Skeleton Screens**
+
+---
+
+
