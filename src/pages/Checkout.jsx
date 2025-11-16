@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import CheckoutInput from "../components/CheckoutInput";
 import CheckoutLabel from "../components/CheckoutLabel";
+import { CartContext } from "../context/CartContext";
 
-export default function Checkout({ cartItems, totalPrice }) {
+export default function Checkout({ totalPrice }) {
+  const [cartItems, setCartItems] = useContext(CartContext);
+
   const checkoutArr = cartItems.map(
     (item) => item.title + " " + "(" + "*" + item.quantity + ")"
   );

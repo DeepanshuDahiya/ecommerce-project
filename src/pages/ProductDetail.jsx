@@ -1,15 +1,18 @@
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import ReviewCard from "../components/ReviewCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ShimmerProductDetail from "../components/ShimmerProductDetail";
+import { CartContext } from "../context/CartContext";
 
-export default function ProductDetail({ setCartItems }) {
+export default function ProductDetail() {
   const navigate = useNavigate();
   const location = useLocation();
   const { state } = location.state || {};
   const [fetchedProduct, setFetchedProduct] = useState([]);
   const params = useParams();
   const productId = params.id;
+
+  const [cartItems, setCartItems] = useContext(CartContext);
 
   useEffect(() => {
     if (!state) {

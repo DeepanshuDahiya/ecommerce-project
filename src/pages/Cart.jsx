@@ -1,12 +1,10 @@
+import { useContext } from "react";
 import CartItem from "../components/CartItem";
 import CartSummary from "../components/CartSummary";
+import { CartContext } from "../context/CartContext";
 
-export default function Cart({
-  cartItems,
-  setCartItems,
-  totalPrice,
-  setTotalPrice,
-}) {
+export default function Cart({ totalPrice, setTotalPrice }) {
+  const [cartItems, setCartItems] = useContext(CartContext);
   return (
     <>
       {cartItems.length === 0 ? (

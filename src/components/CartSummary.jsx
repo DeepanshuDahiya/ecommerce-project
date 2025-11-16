@@ -1,7 +1,10 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
-export default function CartSummary({ cartItems, totalPrice, setTotalPrice }) {
+export default function CartSummary({ totalPrice, setTotalPrice }) {
+  const [cartItems] = useContext(CartContext);
+
   let summaryTotalPrice = 0;
   cartItems.forEach((item) => {
     summaryTotalPrice += item.price * item.quantity;

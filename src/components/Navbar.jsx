@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { LuShoppingCart } from "react-icons/lu";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import SearchSuggestion from "./SearchSuggestion";
+import { SuggestionContext } from "../context/SuggestionContext";
+import { CartContext } from "../context/CartContext";
 
 export default function Navbar({
   search,
@@ -9,11 +11,10 @@ export default function Navbar({
   setSearch,
   categories,
   filteredData,
-  isSuggestionOpen,
-  setIsSuggestionOpen,
-  cartItems,
 }) {
   const [input, setInput] = useState("");
+  const [cartItems] = useContext(CartContext);
+  const [isSuggestionOpen, setIsSuggestionOpen] = useContext(SuggestionContext);
 
   let cartItemCount = 0;
   cartItems.forEach((item) => {
@@ -37,7 +38,7 @@ export default function Navbar({
       <div className="w-[85%] flex items-center mx-auto justify-between max-[540px]:w-[96%]">
         <div className="logo hover:cursor-pointer max-[540px]:text-md">
           <Link to="/">
-            <span className="font-bold">ShopSphere</span>
+            <span className="font-bold">UrbanCart</span>
           </Link>
         </div>
 
@@ -45,7 +46,7 @@ export default function Navbar({
 
         <div className="search-bar flex flex-col text-black">
           <input
-            className="bg-white outline-none px-3 w-[25vw] h-10 rounded-xl shadow-lg max-[540px]:px-1 max-[540px]:h-7 max-[540px]:w-16 max-[540px]:rounded-md"
+            className="bg-white outline-none px-3 w-[25vw] h-10 rounded-xl shadow-lg max-[540px]:px-1 max-[540px]:h-7 max-[540px]:w-20 max-[540px]:rounded-md"
             type="text"
             placeholder="Search"
             value={input}

@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ProductHome from "../components/ProductHome";
 import ShimmerHome from "../components/ShimmerHome";
+import { SuggestionContext } from "../context/SuggestionContext";
 
 export default function Home({
   search,
@@ -9,8 +10,8 @@ export default function Home({
   setDataList,
   filteredData,
   setFilteredData,
-  setIsSuggestionOpen,
 }) {
+  const [isSuggestionOpen, setIsSuggestionOpen] = useContext(SuggestionContext);
   const [pageNumber, setPageNumber] = useState(1);
   const pageSize = 10;
   const totalPages = Math.ceil(filteredData.length / pageSize);
@@ -77,17 +78,7 @@ export default function Home({
     <div onClick={(e) => setIsSuggestionOpen(false)}>
       <div className="flex flex-wrap justify-center gap-8 p-8  min-h-screen">
         {filteredData.slice(startSlice, endSlice).map((data) => {
-          return (
-            <ProductHome
-              key={data.id}
-              id={data.id}
-              image={data.thumbnail}
-              title={data.title}
-              brand={data.brand}
-              price={data.price}
-              data={data}
-            />
-          );
+          return <ProductHome key={data.id} data={data} />;
         })}
       </div>
       <div className="flex justify-center flex-wrap mb-5 mx-3">

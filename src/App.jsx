@@ -15,8 +15,6 @@ export default function App() {
   const [search, setSearch] = useState("");
   const [dataList, setDataList] = useLocalStorage("dataList", []);
   const [filteredData, setFilteredData] = useState([]);
-  const [isSuggestionOpen, setIsSuggestionOpen] = useState(false);
-  const [cartItems, setCartItems] = useLocalStorage("cartItems", []);
   const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
@@ -37,9 +35,6 @@ export default function App() {
           categories={categories}
           setCategories={setCategories}
           filteredData={filteredData}
-          isSuggestionOpen={isSuggestionOpen}
-          setIsSuggestionOpen={setIsSuggestionOpen}
-          cartItems={cartItems}
         />
         <Routes>
           <Route
@@ -52,39 +47,19 @@ export default function App() {
                 filter={filter}
                 filteredData={filteredData}
                 setFilteredData={setFilteredData}
-                setIsSuggestionOpen={setIsSuggestionOpen}
               />
             }
           />
-          <Route
-            path="/product/:id"
-            element={
-              <ProductDetail
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-              />
-            }
-          />
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route
             path="/cart"
             element={
-              <Cart
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-                totalPrice={totalPrice}
-                setTotalPrice={setTotalPrice}
-              />
+              <Cart totalPrice={totalPrice} setTotalPrice={setTotalPrice} />
             }
           />
           <Route
             path="/checkout"
-            element={
-              <Checkout
-                cartItems={cartItems}
-                setCartItems={setCartItems}
-                totalPrice={totalPrice}
-              />
-            }
+            element={<Checkout totalPrice={totalPrice} />}
           />
           <Route path="/*" element={<NotFound />}></Route>
         </Routes>

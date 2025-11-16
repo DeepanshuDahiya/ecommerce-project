@@ -1,4 +1,9 @@
-export default function CartItem({ cartItem, setCartItems }) {
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+
+export default function CartItem({ cartItem }) {
+  const [cartItems, setCartItems] = useContext(CartContext);
+
   function addItemQuantity(cartItem) {
     setCartItems((prev) => {
       return prev.map((item) =>

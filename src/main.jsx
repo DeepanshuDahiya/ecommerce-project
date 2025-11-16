@@ -2,9 +2,15 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
+import SuggestionProvider from "./context/SuggestionContext.jsx";
+import CartProvider from "./context/CartProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <CartProvider>
+      <SuggestionProvider>
+        <App />
+      </SuggestionProvider>
+    </CartProvider>
   </StrictMode>
 );
